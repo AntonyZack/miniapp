@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "prettier",
+        "plugin:storybook/recommended",
+        "eslint:recommended"
+    ],
+    "globals": {
+        "React": "readonly"
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "prettier/prettier": "warn",
+        "no-console": "warn"
+    }
+}

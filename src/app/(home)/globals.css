@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-gradient,
+    :where(
+            .menu
+                li:not(.menu-title, .disabled)
+                > *:not(ul, details, .menu-title)
+        ):not(summary, .active, .btn):focus {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: bold; /* Make the text bold */
+        -webkit-font-smoothing: antialiased; /* Sharpen the text */
+        -moz-osx-font-smoothing: grayscale; /* Sharpen the text for Firefox */
+    }
+}
+
+.box-shadow-inset {
+    -webkit-box-shadow: inset -4px -6px 12px -3px rgba(255, 255, 255, 0.03);
+    box-shadow: inset -4px -6px 12px -3px rgba(255, 255, 255, 0.02);
+}
