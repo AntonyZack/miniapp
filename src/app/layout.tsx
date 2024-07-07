@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Sora } from 'next/font/google';
 import './(home)/globals.css';
-
+// TODO: Update this file based on your need
 const PublishBaseUrl = process.env.PUBLISH_URL as string;
 
 const Navbar = dynamic(() => import('@/components/ui/navbar/navbar'), {
@@ -37,8 +37,8 @@ const sora = Sora({ subsets: ['latin'] });
 
 export const viewport: Viewport = {
     themeColor: [
-        { media: '(prefers-color-scheme: light)', color: '#96FD65' },
-        { media: '(prefers-color-scheme: dark)', color: '#96FD65' }
+        { media: '(prefers-color-scheme: light)', color: '#E49230' },
+        { media: '(prefers-color-scheme: dark)', color: '#E49230' }
     ],
     colorScheme: 'dark',
     width: 'device-width',
@@ -48,22 +48,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    applicationName: 'Last Shelter',
+    applicationName: 'Dex Aggregator',
     abstract:
-        'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+        'Dex Aggregator: Experience super fast and fair price trading with our dex.',
     bookmarks:
-        'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+        'Dex Aggregator: Experience super fast and fair price trading with our dex.',
     classification:
-        'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+        'Dex Aggregator: Experience super fast and fair price trading with our dex.',
     category:
-        'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+        'Dex Aggregator: Experience super fast and fair price trading with our dex.',
     robots: { index: true, follow: true },
     referrer: 'origin',
     alternates: { canonical: PublishBaseUrl },
-    creator: 'NILL Developers',
-    title: 'Shelter Application',
+    creator: 'Dex Aggregator',
+    title: 'Dex Aggregator',
     description:
-        'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+        'Dex Aggregator: Experience super fast and fair price trading with our dex.',
     generator: 'Next.js',
     manifest: '/manifest.json',
     keywords: [
@@ -77,30 +77,22 @@ export const metadata: Metadata = {
         'not-coin'
     ],
 
-    authors: [
-        { name: 'NILL Developers' },
-        {
-            name: 'NILL Developers',
-            url: 'https://github.com/Nilldevelopers'
-        }
-    ],
-
     icons: [
         { rel: 'apple-touch-icon', url: '/assets/icons/icon-128.png' },
         { rel: 'icon', url: '/assets/icons/icon-128.png' }
     ],
     openGraph: {
-        title: 'Last Shelter Application',
+        title: 'Dex Aggregator',
         description:
-            'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+            'Dex Aggregator: Experience super fast and fair price trading with our dex.',
         url: PublishBaseUrl,
-        siteName: 'Last Shelter Application',
+        siteName: 'Dex Aggregator',
         images: [
             {
-                url: 'https://raw.githubusercontent.com/LAST-SHELTER-AI/brand-assets/main/SocialMedia/Banners/telegram-banner.png',
+                url: '',
                 width: 1200,
                 height: 630,
-                alt: 'Last Shelter application banner'
+                alt: 'Dex Aggregator: Experience super fast and fair price trading with our dex.'
             }
         ],
         locale: 'en_US',
@@ -108,24 +100,24 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        site: '@nilldevelopers',
-        creator: '@nilldevelopers',
-        title: 'Last Shelter Application',
+        site: '@Dex_Aggregator',
+        creator: '@Dex_Aggregator',
+        title: 'Dex Aggregator',
         description:
-            'Last Shelter: Experience the ultimate mobile PWA for building and survival in a post-apocalyptic world. Secure your shelter, gather resources, and thrive against all odds!',
+            'Dex Aggregator',
         images: [
             {
-                url: 'https://raw.githubusercontent.com/LAST-SHELTER-AI/brand-assets/main/SocialMedia/Banners/telegram-banner.png',
+                url: '',
                 width: 1200,
                 height: 630,
-                alt: 'Last Shelter application banner'
+                alt: 'Dex Aggregator: Experience super fast and fair price trading with our dex.'
             }
         ]
     },
 
     appleWebApp: {
         capable: true,
-        title: 'Last Shelter',
+        title: 'Dex Aggregator',
         statusBarStyle: 'default' // You can use 'default', 'black', or 'black-translucent'
     },
     formatDetection: {
@@ -133,7 +125,7 @@ export const metadata: Metadata = {
         address: false,
         email: false
     },
-    publisher: 'Last Shelter',
+    publisher: 'Dex Aggregator',
     appLinks: {
         // ios: {
         //   app_store_id: 'your_app_store_id', // Replace with your iOS App Store ID
@@ -147,7 +139,7 @@ export const metadata: Metadata = {
             url: PublishBaseUrl // Replace with your website URL
         }
     },
-    assets: ['https://raw.githubusercontent.com/LAST-SHELTER-AI/brand-assets']
+    assets: ['']
 };
 
 export default function RootLayout({
