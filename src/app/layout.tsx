@@ -3,6 +3,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 import dynamic from 'next/dynamic';
 import { Sora } from 'next/font/google';
 import './(home)/globals.css';
+import RightBackground from '../components/ui/background/right-background';
+import LeftBackground from '../components/ui/background/left-background';
 
 const PublishBaseUrl = process.env.NEXT_PUBLIC_PUBLISH_URL as string;
 
@@ -112,17 +114,19 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className="dark">
-        <body className={sora.className}>
-        <RainbowProvider>
-            <section className="h-dvh overflow-auto bg-gradient-to-b from-[#394253] to-[#181C27]">
-                <Navbar />
-                {children}
-            </section>
-            <SwapFirstTokenModal />
-            <SwapSecondTokenModal />
-            <SwapSettingsModal />
-        </RainbowProvider>
-        </body>
+            <body className={sora.className}>
+                <RainbowProvider>
+                    <section className="h-dvh overflow-auto  bg-[#000B0F] relative">
+                        <Navbar />
+                        <RightBackground />
+                        <LeftBackground />
+                        {children}
+                    </section>
+                    <SwapFirstTokenModal />
+                    <SwapSecondTokenModal />
+                    <SwapSettingsModal />
+                </RainbowProvider>
+            </body>
         </html>
     );
 }

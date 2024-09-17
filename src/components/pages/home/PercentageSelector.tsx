@@ -13,15 +13,11 @@ const PercentageSelector: React.FC<{ onChange: (value: number) => void }> = ({
     };
 
     return (
-        <div className="flex flex-row-reverse gap-[8px]">
+        <div className="flex flex-row-reverse gap-[8px] border">
             {percentages.map((percentage, index) => (
                 <div
                     key={index}
-                    className={`btn btn-ghost h-[24px] !min-h-[24px] w-[48px] px-[8px] py-[2px] leading-5 ${
-                        index === activeIndex
-                            ? 'bg-gradient-text-dark'
-                            : 'shadow-neumorphism'
-                    }`}
+                    className={`btn btn-ghost h-[24px] !min-h-[24px] w-[48px] px-[8px] py-[2px] leading-5`}
                     onClick={() => handleClick(index)}
                 >
                     <span className="text-[14px] uppercase text-white">{`${percentage * 100}%`}</span>

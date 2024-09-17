@@ -89,7 +89,7 @@ const MainComponent: React.FC = () => {
             ) : (
                 <p>Loading...</p>
             )} */}
-            <section className="h-screen max-h-[622px] rounded-[10px] bg-card-gradient-45deg p-6 shadow-neumorphism lg:h-auto lg:max-h-[622px]">
+            <section className="h-screen max-h-[622px] rounded-[10px]  p-6  lg:h-auto lg:max-h-[622px]">
                 <div className="flex flex-col content-center items-center justify-center">
                     <div className="mb-4 flex w-full flex-row items-center justify-between capitalize text-white">
                         <span className="font-sora text-base">swap</span>
@@ -107,8 +107,8 @@ const MainComponent: React.FC = () => {
                             />
                         </label>
                     </div>
-                    <div className="flex w-full flex-col gap-[8px] rounded-[10px] p-[12px] shadow-card-neumorphism">
-                        <div className="flex flex-row items-center justify-between">
+                    <div className="flex w-full flex-col gap-[8px]  p-[12px] border-gradient   ">
+                        <div className="flex flex-row items-center justify-between px-6 py-3">
                             <p className="text-balance text-[12px] font-normal">
                                 Balance:
                                 {calculateNewBalance().toLocaleString()}
@@ -135,7 +135,7 @@ const MainComponent: React.FC = () => {
                     <div className="py-[24px]">
                         <button
                             onClick={() => handleSwapClick()}
-                            className="btn btn-square btn-ghost bg-gradient-text-dark"
+                            className="btn btn-square btn-ghost "
                         >
                             <Image
                                 loading="lazy"

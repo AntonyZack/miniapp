@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IRoute, Routes } from '../../../data/routes';
+import Image from 'next/image';
+import close from '@/../public/assets/icons/x-mark.svg'
 
 const ConnectWalletComponent = dynamic(
     () => import('@/components/ui/button/ConnectWalletButton'),
@@ -22,9 +24,12 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar border-b border-gray-600 bg-transparent">
-            <div className="navbar-start">
-                <div className="dropdown">
+        <div className="navbar items-center border-b border-gray-600 bg-transparent pl-4 ">
+            <div className="flex items-center justify-start gap-2 ">
+                <div>
+                    <Image src={close} alt='close' />
+                </div>
+                <div className="dropdown hidden">
                     <div
                         tabIndex={0}
                         role="button"
@@ -63,11 +68,11 @@ const Navbar = () => {
                         })}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl dark:text-white">
-                    logo here
+                <a className=" text-xl dark:text-white">
+                    Whale Dex
                 </a>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center hidden ">
                 <ul className="menu menu-horizontal px-1">
                     {Routes.map((data: IRoute, index: number) => {
                         return (
@@ -83,7 +88,7 @@ const Navbar = () => {
                     })}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end hidden">
                 <ConnectWalletComponent />
             </div>
         </div>
