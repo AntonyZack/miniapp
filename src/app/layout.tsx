@@ -5,6 +5,7 @@ import { Sora } from 'next/font/google';
 import './(home)/globals.css';
 import RightBackground from '../components/ui/background/right-background';
 import LeftBackground from '../components/ui/background/left-background';
+import Footer from '../components/pages/home/Footer';
 
 const PublishBaseUrl = process.env.NEXT_PUBLIC_PUBLISH_URL as string;
 
@@ -114,18 +115,23 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className="dark">
-            <body className={sora.className}>
+            <body className={`${sora.className} relative bg-[#000B0F]`}>
+                <RightBackground />
+                <LeftBackground />
+
                 <RainbowProvider>
-                    <section className="h-dvh overflow-auto  bg-[#000B0F] relative">
+                    <section className=" relative    ">
                         <Navbar />
-                        <RightBackground />
-                        <LeftBackground />
+
                         {children}
+                        <Footer />
                     </section>
+
                     <SwapFirstTokenModal />
                     <SwapSecondTokenModal />
                     <SwapSettingsModal />
                 </RainbowProvider>
+
             </body>
         </html>
     );

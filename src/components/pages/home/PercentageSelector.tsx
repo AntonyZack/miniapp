@@ -1,3 +1,4 @@
+'use clinet'
 import React, { useState } from 'react';
 
 const PercentageSelector: React.FC<{ onChange: (value: number) => void }> = ({
@@ -10,17 +11,19 @@ const PercentageSelector: React.FC<{ onChange: (value: number) => void }> = ({
     const handleClick = (index: number) => {
         setActiveIndex(index);
         onChange(percentages[index]);
+
+
     };
 
     return (
-        <div className="flex flex-row-reverse gap-[8px] border">
+        <div className="flex flex-row-reverse justify-center self-stretch   gap-[8px]  ">
             {percentages.map((percentage, index) => (
                 <div
                     key={index}
-                    className={`btn btn-ghost h-[24px] !min-h-[24px] w-[48px] px-[8px] py-[2px] leading-5`}
-                    onClick={() => handleClick(index)}
+                    className={`  py-1 w-24 text-center rounded-sm leading-5 cursor-pointer ${activeIndex === index ? 'bg-[#00CCF5] text-black' : 'bg-[#244855] text-white'
+                        }`} onClick={() => handleClick(index)}
                 >
-                    <span className="text-[14px] uppercase text-white">{`${percentage * 100}%`}</span>
+                    <span className="text-[14px] uppercase ">{`${percentage * 100}%`}</span>
                 </div>
             ))}
         </div>

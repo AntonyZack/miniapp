@@ -19,7 +19,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
         <div>
             {items.map((item, index) => (
                 <React.Fragment key={index}>
-                    <div className="collapse collapse-arrow my-2 bg-transparent">
+                    <div className="collapse collapse-arrow my-2 bg-transparent text-white">
                         <input
                             type="radio"
                             name="my-accordion-2"

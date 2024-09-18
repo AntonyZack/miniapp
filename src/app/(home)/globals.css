@@ -24,7 +24,16 @@
 }
 
 .border-gradient {
-  border: 1px solid;
-  border-image-source: linear-gradient(180deg, rgba(0, 204, 245, 0.48) 0%, rgba(0, 88, 105, 0.48) 100%);
-  border-image-slice: 1;
+    position: relative;
+    border: 1px solid transparent; /* تنظیم بوردر */
+    border-radius: 10px; /* گردی بوردر */
+    background: linear-gradient(#09191ECC,#09191ECC) padding-box,
+    linear-gradient(180deg, rgba(0, 204, 245, 0.48) 0%, rgba(0, 88, 105, 0.48) 100%) border-box;
+
+
+}
+
+.swap-gradient{
+    background: linear-gradient(90deg, #00CCF5 0%, #0CD6FF 100%);
+
 }

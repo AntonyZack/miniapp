@@ -67,7 +67,7 @@ const SwapToken2: React.FC<SwapToken2Props> = ({ data, onSelectToken }) => {
                     placeholder="Type here"
                     value={balance}
                     onChange={handleInputChange}
-                    className="input w-full max-w-xs p-0 dark:bg-transparent"
+                    className="input w-full max-w-xs p-0 dark:bg-transparent text-[#C6F0FF]"
                 />
             </div>
         </>

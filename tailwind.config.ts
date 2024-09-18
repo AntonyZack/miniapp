@@ -27,9 +27,7 @@ const config: Config = {
                 'card-neumorphism':
                     '-8px -8px 20px rgba(57, 66, 83, 0.35), 8px 8px 20px rgba(255, 255, 255, 0.1)'
             },
-            maxHeight: {
-                lg: '622px'
-            },
+
             backgroundColor: {
                 ['hover-item']: '#313949'
             },

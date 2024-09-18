@@ -79,17 +79,9 @@ const MainComponent: React.FC = () => {
         setIsSwapped(!isSwapped);
     };
     return (
-        <main className="mx-auto w-full max-w-lg">
-            {/* sample network data fetching */}
-            {/*     {network ? (
-                <div>
-                    <p>Network Name: {network.name}</p>
-                    <p>Chain ID: {network.chainId}</p>
-                </div>
-            ) : (
-                <p>Loading...</p>
-            )} */}
-            <section className="h-screen max-h-[622px] rounded-[10px]  p-6  lg:h-auto lg:max-h-[622px]">
+        <main className="mx-auto w-full max-w-lg py-8 ">
+
+            <section className="min-h-screen  rounded-[10px]  p-6   ">
                 <div className="flex flex-col content-center items-center justify-center">
                     <div className="mb-4 flex w-full flex-row items-center justify-between capitalize text-white">
                         <span className="font-sora text-base">swap</span>
@@ -98,6 +90,7 @@ const MainComponent: React.FC = () => {
                             className="btn btn-square btn-ghost"
                         >
                             <Image
+                                className='text-[#C6F0FF]'
                                 loading="lazy"
                                 priority={false}
                                 src={'/assets/icons/swap_token.svg'}
@@ -107,18 +100,17 @@ const MainComponent: React.FC = () => {
                             />
                         </label>
                     </div>
-                    <div className="flex w-full flex-col gap-[8px]  p-[12px] border-gradient   ">
-                        <div className="flex flex-row items-center justify-between px-6 py-3">
-                            <p className="text-balance text-[12px] font-normal">
-                                Balance:
-                                {calculateNewBalance().toLocaleString()}
-                            </p>
+                    <div className="flex w-full flex-col gap-[8px] items-stretch p-[12px] border-gradient   ">
+                        <p className=" lg:pl-4 pl-0   text-[12px] font-normal text-[#C6F0FF]">
+                            Balance:
+                            {calculateNewBalance().toLocaleString()}
+                        </p>
 
-                            <PercentageSelector
-                                onChange={handlePercentageChange}
-                            />
-                        </div>
-                        <div className="flex flex-row items-center justify-between">
+                        <PercentageSelector
+                            onChange={handlePercentageChange}
+                        />
+
+                        <div className="flex flex-row items-center justify-around">
                             {isSwapped ? (
                                 <SwapToken2
                                     data={token2Data}
@@ -132,23 +124,26 @@ const MainComponent: React.FC = () => {
                             )}
                         </div>
                     </div>
+
                     <div className="py-[24px]">
                         <button
                             onClick={() => handleSwapClick()}
-                            className="btn btn-square btn-ghost "
+                            className=" p-2 "
                         >
-                            <Image
-                                loading="lazy"
-                                priority={false}
-                                src={'/assets/icons/swap_down.svg'}
-                                width={20}
-                                height={20}
-                                alt="dropdown icon"
-                            />
+                            <p className='bg-[#00CCF5] rounded-sm  p-2'>
+                                <Image className='  '
+                                    loading="lazy"
+                                    priority={false}
+                                    src={'/assets/icons/swap_down.svg'}
+                                    width={25}
+                                    height={25}
+                                    alt="dropdown icon"
+                                />
+                            </p>
                         </button>
                     </div>
 
-                    <div className="mb-[12px] flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] shadow-card-neumorphism">
+                    <div className="mb-[12px] flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] border-gradient ">
                         {isSwapped ? (
                             <SwapToken1
                                 data={token1Data}
@@ -165,7 +160,7 @@ const MainComponent: React.FC = () => {
                     <Accordion items={accordionItems} />
 
                     <section className="mt-4 flex w-full flex-wrap items-center justify-center py-3">
-                        <button className="btn btn-ghost w-full bg-gradient-orange capitalize text-white md:w-full">
+                        <button className="btn btn-ghost w-full swap-gradient capitalize text-white md:w-full">
                             swap
                         </button>
                     </section>
