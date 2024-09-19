@@ -103,7 +103,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className="dark">
-            <body className={`${sora.className} relative bg-[#000B0F]`}>
+            <body className={`${sora.className} relative bg-[#000B0F] `}>
                 <RightBackground />
                 <LeftBackground />
 

@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import { Fragment } from 'react';
+import background from '@/../public/assets/icons/background2.svg'
 
 const SwapFirstTokenModal = () => {
-    const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    const data = [1, 2, 3, 4, 5, 6, 7];
+
     return (
         <Fragment>
             <input
@@ -10,8 +12,8 @@ const SwapFirstTokenModal = () => {
                 id="token_list_modal_1"
                 className="modal-toggle"
             />
-            <dialog id="token_list_modal_1" className="modal backdrop-blur">
-                <div className="modal-box bg-gradient-dark text-token">
+            <dialog id="token_list_modal_1" className="modal fixed inset-0 z-50 flex items-center justify-center">
+                <div className="modal-box bg-[#000B0F] text-token w-full h-full max-w-none max-h-none p-8 relative">
                     <form method="dialog">
                         <label
                             htmlFor="token_list_modal_1"
@@ -25,17 +27,17 @@ const SwapFirstTokenModal = () => {
                     </h3>
 
                     <div className="flex flex-col gap-6">
-                        <label className="input input-bordered flex items-center gap-2 bg-card-gradient-45deg">
+                        <label className="input input-bordered flex flex-row-reverse items-center gap-2 bg-[#09191ECC] border focus-visible:outline-[#00CCF5] border-[#00CCF5]">
                             <input
                                 type="text"
-                                className="grow"
-                                placeholder="Search"
+                                className="grow placeholder:text-white"
+                                placeholder="Search name or contract address"
                             />
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 16 16"
-                                fill="currentColor"
-                                className="h-4 w-4 opacity-70"
+                                fill="white"
+                                className="h-5 w-5"
                             >
                                 <path
                                     fillRule="evenodd"
@@ -45,68 +47,44 @@ const SwapFirstTokenModal = () => {
                             </svg>
                         </label>
 
-                        <div className="p-3">
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-                                <div className="btn btn-ghost flex flex-row items-center gap-3 rounded-md bg-gradient-orange px-[10px] py-[8px]">
-                                    <Image
-                                        loading="lazy"
-                                        priority={false}
-                                        src={'/assets/icons/tokens/eth.svg'}
-                                        width={22}
-                                        height={22}
-                                        alt="ethereum token icon"
-                                    />
-                                    <span>Ethereum</span>
-                                </div>
-                                <div className="btn btn-ghost flex flex-row items-center gap-3 rounded-md bg-gradient-dark px-[10px] py-[8px]">
-                                    <Image
-                                        loading="lazy"
-                                        priority={false}
-                                        src={'/assets/icons/tokens/eth.svg'}
-                                        width={22}
-                                        height={22}
-                                        alt="ethereum token icon"
-                                    />
-                                    <span>Ethereum</span>
-                                </div>
-                                <div className="btn btn-ghost flex flex-row items-center gap-3 rounded-md bg-gradient-dark px-[10px] py-[8px]">
-                                    <Image
-                                        loading="lazy"
-                                        priority={false}
-                                        src={'/assets/icons/tokens/eth.svg'}
-                                        width={22}
-                                        height={22}
-                                        alt="ethereum token icon"
-                                    />
-                                    <span>Ethereum</span>
-                                </div>
-                                <div className="btn btn-ghost flex flex-row items-center gap-3 rounded-md bg-gradient-dark px-[10px] py-[8px]">
-                                    <Image
-                                        loading="lazy"
-                                        priority={false}
-                                        src={'/assets/icons/tokens/eth.svg'}
-                                        width={22}
-                                        height={22}
-                                        alt="ethereum token icon"
-                                    />
-                                    <span>Ethereum</span>
-                                </div>
-                                <div className="btn btn-ghost flex flex-row items-center gap-3 rounded-md bg-gradient-dark px-[10px] py-[8px]">
-                                    <Image
-                                        loading="lazy"
-                                        priority={false}
-                                        src={'/assets/icons/tokens/eth.svg'}
-                                        width={22}
-                                        height={22}
-                                        alt="ethereum token icon"
-                                    />
-                                    <span>Ethereum</span>
-                                </div>
+                        <div className="flex flex-wrap justify-center items-center gap-2">
+                            <div className="flex flex-row cursor-pointer justify-center gap-3  rounded-md bg-[#00CCF5] text-black  px-4 py-[8px]">
+                                <Image className=''
+                                    loading="lazy"
+                                    priority={false}
+                                    src={'/assets/icons/tokens/eth.svg'}
+                                    width={22}
+                                    height={22}
+                                    alt="ethereum token icon"
+                                />
+                                <span>Ethereum</span>
+                            </div>
+                            <div className="flex flex-row cursor-pointer justify-center gap-3 rounded-md bg-[#244855] text-white  px-4 py-[8px]">
+                                <Image
+                                    loading="lazy"
+                                    priority={false}
+                                    src={'/assets/icons/tokens/binance.svg'}
+                                    width={22}
+                                    height={22}
+                                    alt="binance token icon"
+                                />
+                                <span>Binance</span>
+                            </div>
+                            <div className="flex flex-row cursor-pointer justify-center gap-3 rounded-md bg-[#244855] text-white  px-4 py-[8px]">
+                                <Image
+                                    loading="lazy"
+                                    priority={false}
+                                    src={'/assets/icons/tokens/fantom.svg'}
+                                    width={22}
+                                    height={22}
+                                    alt="fantom token icon"
+                                />
+                                <span>Fantom</span>
                             </div>
                         </div>
 
-                        <div className="mt-6 flex max-h-[226px] flex-col gap-3 overflow-y-auto py-[14px]">
-                            {data.map((data, index: number) => (
+                        <div className="mt-6 flex flex-col gap-3 py-[14px]">
+                            {data.map((item, index: number) => (
                                 <div
                                     key={index}
                                     className="flex flex-row items-center justify-between rounded-lg p-3 hover:cursor-pointer hover:bg-hover-item"
@@ -116,9 +94,7 @@ const SwapFirstTokenModal = () => {
                                             <Image
                                                 loading="lazy"
                                                 priority={false}
-                                                src={
-                                                    '/assets/icons/tokens/syscoin.png'
-                                                }
+                                                src={`/assets/icons/tokens/coin${index + 1}.svg`}
                                                 width={42}
                                                 height={42}
                                                 alt="token icon"
@@ -135,6 +111,10 @@ const SwapFirstTokenModal = () => {
                                     </div>
                                 </div>
                             ))}
+                            <button className='bg-[#00CCF5] self-stretch py-4 rounded-md mt-2 flex flex-row-reverse gap-2 items-center justify-center'>
+                                <span> Back to Swap</span>
+                                <Image src={'/assets/icons/arrow.svg'} alt='arrow' width={25} height={25} />
+                            </button>
                         </div>
                     </div>
                 </div>

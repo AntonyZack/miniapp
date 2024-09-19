@@ -36,16 +36,16 @@ function Page() {
                                 </div>
                             </div>
                             <div className="mt-2 flex w-full flex-wrap items-center justify-between p-2">
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     25%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     50%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     75%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     MAX
                                 </button>
                             </div>
@@ -79,16 +79,16 @@ function Page() {
                                 </div>
                             </div>
                             <div className="mt-2 flex w-full flex-wrap items-center justify-between p-2">
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     25%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     50%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     75%
                                 </button>
-                                <button className="box-shadow-inset w-[24%] rounded-lg bg-gradient-to-br from-[#2C3341] to-[#313949] p-1 transition hover:bg-gradient-orange hover:text-white active:scale-[.96]">
+                                <button className="box-shadow-inset w-[24%] rounded-lg bg-[#244855] p-1 transition hover:bg-[#00CCF5] hover:text-white active:scale-[.96]">
                                     MAX
                                 </button>
                             </div>
@@ -117,7 +117,7 @@ function Page() {
                 <section className="box-shadow-inset mt-5 flex w-full flex-wrap content-start rounded-lg bg-gradient-to-l border-gradient bg-[#09191ECC] py-2  text-white px-3 text-sm">
                     <div className="flex w-full items-center justify-between p-2">
                         <span> Total APR</span>
-                        <span className=" dark:bg-gradient-text-dark">
+                        <span className=" dark:bg-[#00CCF5] p-2 rounded-md">
                             Up to 26.05%
                         </span>
                     </div>
