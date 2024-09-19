@@ -20,7 +20,7 @@ function Footer() {
             </Link>
 
             <Link href='#'>
-                <Image src={wallet} width={40} height={40} alt="wallet" />
+                <Image src={wallet} width={45} height={45} alt="wallet" />
             </Link>
 
         </div>

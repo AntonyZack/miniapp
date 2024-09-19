@@ -6,25 +6,13 @@ import './(home)/globals.css';
 import RightBackground from '../components/ui/background/right-background';
 import LeftBackground from '../components/ui/background/left-background';
 import Footer from '../components/pages/home/Footer';
+import Navbar from '../components/ui/navbar/navbar';
+import SwapFirstTokenModal from '../components/ui/modals/swap/swap1';
+import SwapSecondTokenModal from '../components/ui/modals/swap/swap2';
+import SwapSettings from '../components/ui/modals/swap/settings';
 
 const PublishBaseUrl = process.env.NEXT_PUBLIC_PUBLISH_URL as string;
 
-const Navbar = dynamic(() => import('@/components/ui/navbar/navbar'), {
-    ssr: false,
-    loading: () => <p>Loading navbar...</p>
-});
-const SwapFirstTokenModal = dynamic(() => import('@/components/ui/modals/swap/swap1'), {
-    ssr: false,
-    loading: () => <p>Loading swap...</p>
-});
-const SwapSecondTokenModal = dynamic(() => import('@/components/ui/modals/swap/swap2'), {
-    ssr: false,
-    loading: () => <p>Loading swap...</p>
-});
-const SwapSettingsModal = dynamic(() => import('@/components/ui/modals/swap/settings'), {
-    ssr: false,
-    loading: () => <p>Loading settings...</p>
-});
 
 const sora = Sora({ subsets: ['latin'] });
 
@@ -129,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                     <SwapFirstTokenModal />
                     <SwapSecondTokenModal />
-                    <SwapSettingsModal />
+                    <SwapSettings />
                 </RainbowProvider>
 
             </body>

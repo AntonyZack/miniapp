@@ -22,11 +22,13 @@
     "cssnano": "^7.0.3",
     "ethers": "6.9.1",
     "file-loader": "^6.2.0",
+    "framer-motion": "^11.5.5",
     "i18next": "23.2.3",
     "image-webpack-loader": "^8.1.0",
     "next": "14.2.4",
     "react": "^18.3.1",
     "react-dom": "^18",
+    "react-loading-skeleton": "^3.4.0",
     "viem": "2.16.2",
     "wagmi": "2.10.7"
   },
