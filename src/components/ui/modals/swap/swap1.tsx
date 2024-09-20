@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Fragment } from 'react';
-import background from '@/../public/assets/icons/background2.svg'
 
 const SwapFirstTokenModal = () => {
     const data = [1, 2, 3, 4, 5, 6, 7];
+
 
     return (
         <Fragment>
@@ -83,7 +83,7 @@ const SwapFirstTokenModal = () => {
                             </div>
                         </div>
 
-                        <div className="mt-6 flex flex-col gap-3 py-[14px]">
+                        <div className="mt-2 flex flex-col gap-3 py-[5px]">
                             {data.map((item, index: number) => (
                                 <div
                                     key={index}

@@ -7,7 +7,6 @@ import Home from '../../components/pages/home/Home';
 
 
 export default function Page() {
-    const [showComponent, setShowComponent] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -19,7 +18,7 @@ export default function Page() {
     }, []);
 
     return (
-        <main className='mx-auto w-full max-w-lg py-8'>
+        <main className='mx-auto w-full max-w-lg py-2'>
             {
                 loading ? <Loading /> : <Home />
             }

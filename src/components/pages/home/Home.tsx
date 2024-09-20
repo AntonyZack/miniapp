@@ -3,24 +3,24 @@
 import { accordionItems } from '@/data/accordionItemsSwapFuel';
 import { checkNetwork } from '@/libs/NetworkLibrary';
 import { Network } from 'ethers';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import SwapToken1 from '../../../components/pages/home/SwapToken1';
 import SwapToken2 from '../../../components/pages/home/SwapToken2';
 import Accordion from '../../../components/ui/accordion/Accordion';
 import PercentageSelector from './PercentageSelector';
+import Image from 'next/image';
+
 type NetworkState = Network | null;
 
 function Home() {
     const [network, setNetwork] = useState<NetworkState>(null);
-    const [balance, _] = useState(31980);
-    const [selectedPercentage, setSelectedPercentage] = useState<number>(1); // Set initial selectedPercentage to 1 (100%)
+    const [balance, _] = useState(31980); // مقدار ثابت بالانس اولیه
+    const [selectedPercentage, setSelectedPercentage] = useState<number>(1); // درصد انتخاب شده (100% به صورت پیش‌فرض)
     const [isSwapped, setIsSwapped] = useState<boolean>(false);
     const [token1Data, setToken1Data] = useState<{
         balance: number;
         token_address: string;
-    }>({ balance: 0, token_address: 'token_list_modal_1' });
+    }>({ balance: 31980, token_address: 'token_list_modal_1' }); // مقدار اولیه بالانس
     const [token2Data, setToken2Data] = useState<{
         balance: number;
         token_address: string;
@@ -28,6 +28,10 @@ function Home() {
 
     const handlePercentageChange = (value: number) => {
         setSelectedPercentage(value);
+        // محاسبه بالانس جدید بر اساس درصد
+        const newBalance = balance * value;
+        // تنظیم بالانس جدید در کامپوننت SwapToken1
+        setToken1Data({ ...token1Data, balance: newBalance });
     };
 
     const handleTokenSelect = (data: {
@@ -39,10 +43,6 @@ function Home() {
         } else if (data.token_address === 'token_list_modal_2') {
             setToken2Data(data);
         }
-    };
-
-    const calculateNewBalance = () => {
-        return Math.round(balance * selectedPercentage);
     };
 
     const handleSwapClick = () => {
@@ -59,16 +59,13 @@ function Home() {
     }, []);
 
     return (
-        <section className="min-h-screen  rounded-[10px]  p-6   ">
+        <section className="min-h-screen rounded-[10px] p-6">
             <div className="flex flex-col content-center items-center justify-center">
                 <div className="mb-4 flex w-full flex-row items-center justify-between capitalize text-white">
                     <span className="font-sora text-base">swap</span>
-                    <label
-                        htmlFor="swap_setting_modal"
-                        className="btn btn-square btn-ghost"
-                    >
+                    <label htmlFor="swap_setting_modal" className="btn btn-square btn-ghost">
                         <Image
-                            className='text-[#C6F0FF]'
+                            className="text-[#C6F0FF]"
                             loading="lazy"
                             priority={false}
                             src={'/assets/icons/swap_token.svg'}
@@ -78,60 +75,43 @@ function Home() {
                         />
                     </label>
                 </div>
-                <div className="flex w-full flex-col gap-[8px] items-stretch p-[12px] border-gradient   ">
-                    <p className=" lg:pl-4 pl-0   text-[12px] font-normal text-[#C6F0FF]">
-                        Balance:
-                        {calculateNewBalance().toLocaleString()}
+                <div className="flex w-full flex-col gap-[8px] items-stretch p-[12px] border-gradient">
+                    <p className="lg:pl-4 pl-0 text-[12px] font-normal text-[#C6F0FF]">
+                        Balance: 31980
                     </p>
 
-                    <PercentageSelector
-                        onChange={handlePercentageChange}
-                    />
+                    <PercentageSelector onChange={handlePercentageChange} />
 
                     <div className="flex flex-row items-center justify-around">
                         {isSwapped ? (
-                            <SwapToken2
-                                data={token2Data}
-                                onSelectToken={handleTokenSelect}
-                            />
+                            <SwapToken2 data={token2Data} onSelectToken={handleTokenSelect} />
                         ) : (
-                            <SwapToken1
-                                data={token1Data}
-                                onSelectToken={handleTokenSelect}
-                            />
+                            <SwapToken1 data={token1Data} onSelectToken={handleTokenSelect} />
                         )}
                     </div>
                 </div>
 
                 <div className="py-[24px]">
-                    <button
-                        onClick={() => handleSwapClick()}
-                        className=" p-2 "
-                    >
-                        <p className='bg-[#00CCF5] rounded-sm  p-2'>
-                            <Image className='  '
+                    <button onClick={handleSwapClick} className="p-2">
+                        <p className="bg-[#00CCF5] rounded-md p-2">
+                            <Image
+                                className=""
                                 loading="lazy"
                                 priority={false}
                                 src={'/assets/icons/swap_down.svg'}
-                                width={25}
-                                height={25}
+                                width={30}
+                                height={40}
                                 alt="dropdown icon"
                             />
                         </p>
                     </button>
                 </div>
 
-                <div className="mb-[12px] flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] border-gradient ">
+                <div className="mb-[12px] flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] border-gradient">
                     {isSwapped ? (
-                        <SwapToken1
-                            data={token1Data}
-                            onSelectToken={handleTokenSelect}
-                        />
+                        <SwapToken1 data={token1Data} onSelectToken={handleTokenSelect} />
                     ) : (
-                        <SwapToken2
-                            data={token2Data}
-                            onSelectToken={handleTokenSelect}
-                        />
+                        <SwapToken2 data={token2Data} onSelectToken={handleTokenSelect} />
                     )}
                 </div>
 

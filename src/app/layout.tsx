@@ -109,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                 <RainbowProvider>
                     <section className=" relative    ">
-                        <Navbar />
+                        {/* <Navbar /> */}
 
                         {children}
                         <Footer />

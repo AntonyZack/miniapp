@@ -1,6 +1,11 @@
+'use client'
 import Image from 'next/image';
+import { useState } from 'react';
 
 const SwapSettings = () => {
+    const per = [0.1, 0.5, 1, 2];
+    const [num, setNum] = useState(0);
+
     return (
         <>
             <input
@@ -39,30 +44,33 @@ const SwapSettings = () => {
                                         Slippage Tolerance
                                     </p>
                                 </div>
-                                <div>1%</div>
+                                <div></div>
                             </div>
-                            <div className="flex  flex-row items-center justify-between bg-[#000B0F]  border border-[#00CCF5]  rounded-lg p-4 shadow-card-neumorphism">
-                                <div>1.00%</div>
+                            <div className="flex flex-row items-center justify-between bg-[#000B0F]  border border-[#00CCF5]  rounded-lg p-4 shadow-card-neumorphism">
+                                <div>{num}%</div>
                                 <div className="flex flex-row gap-2">
-                                    <button className="box-shadow-inset w-[25%] rounded-lg  bg-[#244855] p-1 transition hover:bg-sky-500 hover:text-white active:scale-[.96]">
-                                        25%
-                                    </button>
-                                    <button className="box-shadow-inset w-[25%] rounded-lg  bg-[#244855] p-1 transition hover:bg-sky-500 hover:text-white active:scale-[.96]">
-                                        50%
-                                    </button>
-                                    <button className="box-shadow-inset w-[25%] rounded-lg  bg-[#244855] p-1 transition hover:bg-sky-500 hover:text-white active:scale-[.96]">
-                                        75%
-                                    </button>
-                                    <button className="box-shadow-inset w-[25%] rounded-lg  bg-[#244855] p-1 transition hover:bg-sky-500 hover:text-white active:scale-[.96]">
-                                        MAX
-                                    </button>
+                                    {
+                                        per.map((item, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setNum(item)}
+                                                className={`box-shadow-inset w-[25%] rounded-lg py-1 min-w-12 text-center transition ${num === item
+                                                    ? 'bg-[#00CCF5] text-black'
+                                                    : 'bg-[#244855] hover:bg-sky-500 hover:text-white'
+                                                    } active:scale-[.96]`}
+                                            >
+                                                {item}%
+                                            </button>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
                         <div className="flex flex-col gap-3">
                             <div className="flex flex-row items-center justify-between">
                                 <div className="flex flex-row items-center gap-1">
-                                    <Image className='text-[#C6F0FF]'
+                                    <Image
+                                        className="text-[#C6F0FF]"
                                         loading="lazy"
                                         priority={false}
                                         src={'/assets/icons/clock.svg'}
