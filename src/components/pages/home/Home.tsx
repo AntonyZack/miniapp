@@ -59,7 +59,7 @@ function Home() {
     }, []);
 
     return (
-        <section className="min-h-screen rounded-[10px] p-6">
+        <section className="min-h-screen rounded-[10px] px-6 py-2 ">
             <div className="flex flex-col content-center items-center justify-center">
                 <div className="mb-4 flex w-full flex-row items-center justify-between capitalize text-white">
                     <span className="font-sora text-base">swap</span>
