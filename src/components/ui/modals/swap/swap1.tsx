@@ -47,43 +47,43 @@ const SwapFirstTokenModal = () => {
                             </svg>
                         </label>
 
-                        <div className="flex flex-wrap justify-center items-center gap-2">
-                            <div className="flex flex-row cursor-pointer justify-center gap-3  rounded-md bg-[#00CCF5] text-black  px-4 py-[8px]">
+                        <div className="flex justify-center items-center gap-2">
+                            <div className="flex flex-row cursor-pointer justify-center gap-1  rounded-md bg-[#00CCF5] text-black  px-2 py-[8px]">
                                 <Image className=''
                                     loading="lazy"
                                     priority={false}
                                     src={'/assets/icons/tokens/eth.svg'}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={16}
                                     alt="ethereum token icon"
                                 />
-                                <span>Ethereum</span>
+                                <span className=''>Ethereum</span>
                             </div>
-                            <div className="flex flex-row cursor-pointer justify-center gap-3 rounded-md bg-[#244855] text-white  px-4 py-[8px]">
+                            <div className="flex flex-row cursor-pointer justify-center gap-1 rounded-md bg-[#244855] text-white  px-2 py-[8px]">
                                 <Image
                                     loading="lazy"
                                     priority={false}
                                     src={'/assets/icons/tokens/binance.svg'}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={16}
                                     alt="binance token icon"
                                 />
                                 <span>Binance</span>
                             </div>
-                            <div className="flex flex-row cursor-pointer justify-center gap-3 rounded-md bg-[#244855] text-white  px-4 py-[8px]">
+                            <div className="flex flex-row cursor-pointer justify-center gap-1 rounded-md bg-[#244855] text-white  px-2 py-[8px]">
                                 <Image
                                     loading="lazy"
                                     priority={false}
                                     src={'/assets/icons/tokens/fantom.svg'}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={16}
                                     alt="fantom token icon"
                                 />
                                 <span>Fantom</span>
                             </div>
                         </div>
 
-                        <div className="mt-2 flex flex-col gap-3 py-[5px]">
+                        <div className="mt-2 flex flex-col gap-3 py-[5px] h-[20rem] overflow-y-auto">
                             {data.map((item, index: number) => (
                                 <div
                                     key={index}
@@ -111,11 +111,12 @@ const SwapFirstTokenModal = () => {
                                     </div>
                                 </div>
                             ))}
-                            <button className='bg-[#00CCF5] self-stretch py-4 rounded-md mt-2 flex flex-row-reverse gap-2 items-center justify-center'>
-                                <span> Back to Swap</span>
-                                <Image src={'/assets/icons/arrow.svg'} alt='arrow' width={25} height={25} />
-                            </button>
+
                         </div>
+                        <button className='bg-[#00CCF5] self-stretch py-4 rounded-md mt-2 flex flex-row-reverse gap-2 items-center justify-center'>
+                            <span> Back to Swap</span>
+                            <Image src={'/assets/icons/arrow.svg'} alt='arrow' width={25} height={25} />
+                        </button>
                     </div>
                 </div>
             </dialog>

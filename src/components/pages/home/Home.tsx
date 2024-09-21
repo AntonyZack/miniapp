@@ -3,16 +3,25 @@
 import { accordionItems } from '@/data/accordionItemsSwapFuel';
 import { checkNetwork } from '@/libs/NetworkLibrary';
 import { Network } from 'ethers';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SwapToken1 from '../../../components/pages/home/SwapToken1';
 import SwapToken2 from '../../../components/pages/home/SwapToken2';
 import Accordion from '../../../components/ui/accordion/Accordion';
 import PercentageSelector from './PercentageSelector';
 import Image from 'next/image';
+import SwapClick from '../../ui/modals/swap/swapclick';
 
 type NetworkState = Network | null;
 
 function Home() {
+    const modalRef = useRef<HTMLDialogElement>(null);
+
+    const openModal = () => {
+        if (modalRef.current) {
+            modalRef.current.showModal();
+        }
+    };
+
     const [network, setNetwork] = useState<NetworkState>(null);
     const [balance, _] = useState(31980); // مقدار ثابت بالانس اولیه
     const [selectedPercentage, setSelectedPercentage] = useState<number>(1); // درصد انتخاب شده (100% به صورت پیش‌فرض)
@@ -25,6 +34,7 @@ function Home() {
         balance: number;
         token_address: string;
     }>({ balance: 0, token_address: 'token_list_modal_2' });
+
 
     const handlePercentageChange = (value: number) => {
         setSelectedPercentage(value);
@@ -60,7 +70,7 @@ function Home() {
 
     return (
         <section className="min-h-screen rounded-[10px] px-6 py-2 ">
-            <div className="flex flex-col content-center items-center justify-center">
+            <div className="flex flex-col  content-center items-baseline justify-center">
                 <div className="mb-4 flex w-full flex-row items-center justify-between capitalize text-white">
                     <span className="font-sora text-base">swap</span>
                     <label htmlFor="swap_setting_modal" className="btn btn-square btn-ghost">
@@ -91,7 +101,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="py-[24px]">
+                <div className="py-[6px] self-center">
                     <button onClick={handleSwapClick} className="p-2">
                         <p className="bg-[#00CCF5] rounded-md p-2">
                             <Image
@@ -107,7 +117,7 @@ function Home() {
                     </button>
                 </div>
 
-                <div className="mb-[12px] flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] border-gradient">
+                <div className=" flex w-full flex-row items-center justify-between rounded-[10px] p-[12px] border-gradient">
                     {isSwapped ? (
                         <SwapToken1 data={token1Data} onSelectToken={handleTokenSelect} />
                     ) : (
@@ -117,11 +127,13 @@ function Home() {
 
                 <Accordion items={accordionItems} />
 
-                <section className="mt-4 flex w-full flex-wrap items-center justify-center py-3">
+                <section onClick={openModal} className="mt-4 flex w-full flex-wrap items-center justify-center py-3   ">
                     <button className="btn btn-ghost w-full swap-gradient capitalize text-white md:w-full">
                         swap
                     </button>
                 </section>
+                <SwapClick modalRef={modalRef} />
+
             </div>
         </section>
     );

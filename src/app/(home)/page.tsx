@@ -18,7 +18,7 @@ export default function Page() {
     }, []);
 
     return (
-        <main className='mx-auto w-full max-w-lg py-2'>
+        <main className='mx-auto w-full max-w-lg py-2 '>
             {
                 loading ? <Loading /> : <Home />
             }
