@@ -32,65 +32,63 @@ const SwapClick: FC<SwapClickProps> = ({ modalRef }) => {
 
                         <Image src={coin5} alt='cooin5' width={40} />
                         <p className='flex flex-col'>
-                            <span className=''>Transfer out 42 USDT</span>
-                            <span className='text-[#858E9B]'> 0x780bb2e0cad31</span>
+                            <span className='text-[.85rem]'>Transfer out 42 USDT</span>
+                            <span className='text-[#858E9B] text-[.85rem]'> 0x780bb2e0cad31</span>
                         </p>
 
                     </div>
 
-                    <Image width={25} src={copy} alt='copy' />
+                    <Image width={20} src={copy} alt='copy' />
                 </div>
                 <div className="py-4 flex justify-between border-gradient p-4">
                     <div className='flex gap-4' >
 
                         <Image src={coin2} alt='cooin2' width={40} />
                         <p className='flex flex-col'>
-                            <span className=''>Receive 0.002376 BNB</span>
-                            <span className='text-[#858E9B]'>fcd0b976e0e129d</span>
+                            <span className='text-[.85rem]'>Receive 0.002376 BNB</span>
+                            <span className='text-[#858E9B] text-[.85rem]'>fcd0b976e0e129d</span>
                         </p>
 
                     </div>
 
-                    <Image width={25} src={copy} alt='copy' />
+                    <Image width={20} src={copy} alt='copy' />
                 </div>
-                <div className='border-gradient p-4' >
+                <div className='border-gradient px-2' >
                     <div className="my-4 flex justify-between">
-                        <div className=" text-[#858E9B]">Select Exchange Path</div>
+                        <div className=" text-[#858E9B] text-[.85rem]">Select Exchange Path</div>
                         <div className="text-right flex items-center gap-1 ">
                             <Image src={circle} alt='circle' />
 
 
 
-                            <span>Bridges</span></div>
+                            <span className='text-[.85rem]'>Bridges</span></div>
                     </div>
                     <div className="my-4 flex justify-between">
                         <div className="text-[#858E9B] flex items-center gap-1">
-                            <span>Service Fee</span>
+                            <span className='text-[.85rem]'>Service Fee</span>
                             <Image width={20} src={ques} alt='ques' />
                         </div>
-                        <div className=" text-right">0.3%</div>
+                        <div className=" text-right text-[.85rem]">0.3%</div>
                     </div>
                     <div className="my-4 flex justify-between">
                         <div className="text-[#858E9B] flex items-center gap-1">
-                            <span>Gas Fees</span>
+                            <span className='text-[.85rem]'>Gas Fees</span>
                             <Image width={20} src={ques} alt='ques' />
                         </div>
-                        <div className=" text-right">0.000781 BNB(BSC)</div>
+                        <div className=" text-right text-[.85rem]">0.000781 BNB(BSC)</div>
                     </div>
                     <div className="my-4 flex justify-between ">
-                        <div className="w-1/2 text-[#858E9B]">You Will Recive</div>
-                        <div className="w-1/2 text-right">0.00345 BNB(BSC)</div>
+                        <div className="w-1/2 text-[#858E9B] text-[.85rem]">You Will Recive</div>
+                        <div className="w-1/2 text-right text-[.85rem]">0.00345 BNB(BSC)</div>
                     </div>
 
 
                 </div>
-                <button className='bg-transparent border border-[#00CCF5] self-stretch py-3 px-4  rounded-md text-[#00CCF5]'>Approve</button>
+                <button className='bg-transparent border border-[#00CCF5] self-stretch py-2 px-4 text-[.85rem] rounded-md text-[#00CCF5]'>Approve</button>
 
-                <button className='swap-gradient self-stretch py-3 px-4  rounded-md'>Confirm</button>
+                <button className='swap-gradient self-stretch py-2 px-4 text-[.85rem] rounded-md'>Confirm</button>
             </div>
-            {/* <form method="dialog" className="modal-backdrop ">
-                <button className="btn">close</button>
-            </form> */}
+
         </dialog>
     );
 };
