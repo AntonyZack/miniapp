@@ -1,4 +1,5 @@
 
+'use client'
 import Image from 'next/image';
 import { Fragment } from 'react';
 import background from '@/../public/assets/icons/background2.svg'
@@ -50,7 +51,7 @@ const SwapSecondTokenModal = () => {
 
 
 
-                        <div className=" flex flex-col gap-3 py-[14px]">
+                        <div className=" flex flex-col gap-3  py-[5px] h-[23rem] overflow-y-auto">
                             {data.map((item, index: number) => (
                                 <div
                                     key={index}
@@ -78,11 +79,18 @@ const SwapSecondTokenModal = () => {
                                     </div>
                                 </div>
                             ))}
-                            <button className='bg-[#00CCF5] self-stretch py-4 rounded-md mt-2 flex flex-row-reverse gap-2 items-center justify-center'>
-                                <span> Back to Swap</span>
-                                <Image src={'/assets/icons/arrow.svg'} alt='arrow' width={25} height={25} />
-                            </button>
+
                         </div>
+                        <button
+                            onClick={() => {
+                                const modalCheckbox = document.getElementById("token_list_modal_2") as HTMLInputElement;
+                                if (modalCheckbox) modalCheckbox.checked = false;
+                            }}
+                            className='bg-[#00CCF5] self-stretch py-4 rounded-md mt-2 flex flex-row-reverse gap-2 items-center justify-center'
+                        >
+                            <span>Back to Swap</span>
+                            <Image src={'/assets/icons/arrow.svg'} alt='arrow' width={25} height={25} />
+                        </button>
                     </div>
                 </div>
             </dialog>
